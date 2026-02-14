@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para ti, mi amor 🤍</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤍</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Great+Vibes&family=Nunito:wght@300;400;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Pantalla de carga -->
+  <div class="loader" id="loader">
+    <div class="loader-heart">
+      <svg viewBox="0 0 512 512" width="80" height="80">
+        <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" fill="url(#heartGrad)" />
+        <defs>
+          <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ffffff" />
+            <stop offset="100%" style="stop-color:#f0e6ea" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <p class="loader-text">Preparando algo especial para ti...</p>
+  </div>
+
+  <!-- Bokeh / Orbs de fondo -->
+  <div class="ambient-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+    <div class="orb orb-5"></div>
+  </div>
+
+  <!-- Canvas para partículas de corazones -->
+  <canvas id="hearts-canvas"></canvas>
+
+  <!-- Contenedor principal de páginas -->
+  <div class="pages-container" id="app">
+
+    <!-- PÁGINA 1: Sobre sellado -->
+    <section class="page active" id="page1">
+      <div class="envelope-wrapper">
+        <div class="floating-hearts">
+          <span class="heart-float">🤍</span>
+          <span class="heart-float">🤍</span>
+          <span class="heart-float">🤍</span>
+          <span class="heart-float">🤍</span>
+          <span class="heart-float">🤍</span>
+          <span class="heart-float">🤍</span>
+        </div>
+
+        <div class="envelope-3d" id="envelope-main">
+          <div class="envelope-flap"></div>
+          <div class="envelope-body">
+            <div class="wax-seal">
+              <div class="seal-inner">
+                <svg viewBox="0 0 512 512" width="36" height="36">
+                  <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" fill="white" />
+                </svg>
+              </div>
+            </div>
+            <div class="envelope-labels">
+              <div class="label-row">
+                <span class="label-title">De:</span>
+                <span class="label-value" contenteditable="true">Fabian</span>
+              </div>
+              <div class="label-row">
+                <span class="label-title">Para:</span>
+                <span class="label-value" contenteditable="true">Mi querida Aurora</span>
+              </div>
+            </div>
+            <div class="stamp-corner">
+              <div class="stamp">
+                <span class="stamp-icon">💌</span>
+                <span class="stamp-text">AMOR</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="open-prompt">
+            <p class="prompt-text pulse">Ábrela mi amor,</p>
+            <p class="prompt-subtext">quiero expresarte algo</p>
+            <div class="prompt-arrow">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11l5 5 5-5"/><path d="M7 5l5 5 5-5"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="letter-content" id="letter-reveal">
+          <div class="letter-paper">
+            <div class="letter-decoration-top"></div>
+            <div class="letter-header">
+              <h2 class="letter-title">Mi carta para ti</h2>
+              <div class="letter-date">14 de Febrero, 2026</div>
+            </div>
+            <div class="letter-body" contenteditable="true">Mi amor,
+
+Cada palabra que escribo aquí lleva un pedazo de mi corazón. 
+se que realmente esto es poco a lo que realmente mereces en un dia especial,
+pero te prometo que sabré recompensartelo pronto mi amor
+porque mereces el mundo y mas, por lo increible y maravillosa que eres
+mi corazon.
+
+Eres esa gran razon por la que siempre tengo una gran sonrisa en mi y motivacion, 
+cada noche antes de dormir mr quedo viendo tus fotos y videos, contemplando lo Diosa, perfecta
+Hermosa e increible que eres, memorizo cada facccion de ti, de tu hermoso rostro . 
+y la verdad me quedo super corto en esto mi amor, porque mi amor por ti jamas tendra alguna reja que me ate
+soy loco de amor por ti, obsesionado por ti, enamorado de ti mi querida aurora.
+
+Agradezco a Dios por permitime seguir aqui contigo y ya pronto a tu lado.
+
+Eternamente tuyo,</div>
+            <div class="letter-signature" contenteditable="true">Con todo mi amor 🤍</div>
+            <button class="next-btn glass-btn" onclick="goToPage(2)">
+              <span>Siguiente</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PÁGINA 2: Pensamientos y fotos -->
+    <section class="page" id="page2">
+      <div class="page-content">
+        <div class="thoughts-section glass-card">
+          <div class="thoughts-header">
+            <div class="thoughts-icon">🤍</div>
+            <h2 class="thoughts-title reveal-text">Pensamientos que llevo en mi corazón</h2>
+            <p class="thoughts-subtitle reveal-text">Mi corazon solo le pertenece a una persona, cada latido, y es a ti</p>
+          </div>
+          <div class="thoughts-container">
+            <div class="thought-item reveal-text" style="--delay: 0.1s">
+              <div class="thought-heart">🤍</div>
+              <div class="thought-text" contenteditable="true">Eeres mi unico motivo para seguir mis metas y sueños porque en cada una de ellas estas tu</div>
+            </div>
+            <div class="thought-item reveal-text" style="--delay: 0.2s">
+              <div class="thought-heart">🤍</div>
+              <div class="thought-text" contenteditable="true">Cada faccion de ti, palabra y risa, los atesoro en mi mente como de mis tesoros mas valiosos</div>
+            </div>
+            <div class="thought-item reveal-text" style="--delay: 0.3s">
+              <div class="thought-heart">🤍</div>
+              <div class="thought-text" contenteditable="true">Mi regalo mas hermoso siempre seras tu, estoy eternamente agradecido</div>
+            </div>
+            <div class="thought-item reveal-text" style="--delay: 0.4s">
+              <div class="thought-heart">🤍</div>
+              <div class="thought-text" contenteditable="true">Gracias por amarme tal como soy, con cada defecto y virtud</div>
+            </div>
+            <div class="thought-item reveal-text" style="--delay: 0.5s">
+              <div class="thought-heart">🤍</div>
+              <div class="thought-text" contenteditable="true">Contigo encontré mi hogar, mi paz, mi razón de ser</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hearts-photos-section">
+          <h3 class="section-subtitle reveal-text">Mi Corazon</h3>
+          <div class="hearts-grid-photos three-photos">
+            <div class="heart-photo-frame">
+              <div class="heart-shape-container">
+                <div class="photo-placeholder">
+                  <!-- Pega aquí el link de la foto 1 -->
+                  <img class="photo-img" src="https://i.pinimg.com/236x/a2/32/5e/a2325ee9faa280fbe4079cbe6fd67552.jpg" alt="Te amo mucho" />
+                </div>
+              </div>
+              <p class="heart-caption">Te amo mucho 🤍</p>
+            </div>
+            <div class="heart-photo-frame">
+              <div class="heart-shape-container">
+                <div class="photo-placeholder">
+                  <!-- Pega aquí el link de la foto 2 -->
+                  <img class="photo-img" src="https://img.wattpad.com/cover/135663231-256-k629302.jpg" alt="Mi mami y amada" />
+                </div>
+              </div>
+              <p class="heart-caption">Mi mami y amada 🤍</p>
+            </div>
+            <div class="heart-photo-frame">
+              <div class="heart-shape-container">
+                <div class="photo-placeholder">
+                  <!-- Pega aquí el link de la foto 3 -->
+                  <img class="photo-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ2IRPP0rnMSqJkS-NfUaE3FdyWgAmIN6XZg&s" alt="Aurora" />
+                </div>
+              </div>
+              <p class="heart-caption">Aurora 🤍</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="next-btn glass-btn" onclick="goToPage(3)">
+          <span>Siguiente</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- PÁGINA 3: Dispensador de recibo -->
+    <section class="page" id="page3">
+      <div class="page-content">
+        <div class="receipt-dispenser">
+          <div class="dispenser-top">
+            <div class="dispenser-lights">
+              <span class="light light-1"></span>
+              <span class="light light-2"></span>
+              <span class="light light-3"></span>
+            </div>
+            <div class="dispenser-label">RAZONES POR LAS QUE TE AMO</div>
+            <div class="dispenser-slot"></div>
+          </div>
+
+          <div class="receipt-paper" id="receipt-roll">
+            <div class="receipt-header">
+              <div class="receipt-logo">🤍</div>
+              <h3>COMPROBANTE DE AMOR</h3>
+              <p class="receipt-subtitle">Infinitas razones para amarte</p>
+              <p class="receipt-date">14 / FEB / 2026</p>
+              <div class="receipt-divider">━━━━━━━━━━━━━━━━━━━━━━</div>
+            </div>
+
+            <div class="receipt-items" id="receipt-content">
+              <div class="receipt-item"><span class="item-number">#001</span><span class="item-text" contenteditable="true">Al escucharte mi mundo entra en calma</span></div>
+              <div class="receipt-item"><span class="item-number">#002</span><span class="item-text" contenteditable="true">Amo que aunque el mundo cambie, nuestros planes siempre incluyen al otro</span></div>
+              <div class="receipt-item"><span class="item-number">#003</span><span class="item-text" contenteditable="true">Amo tu hermoso rostro y cuerpo, diosito se lucio, gracia patron</span></div>
+              <div class="receipt-item"><span class="item-number">#004</span><span class="item-text" contenteditable="true">Por ser tu en cada momento, decir todo sin ocultar, sin miedo ni filtros</span></div>
+              <div class="receipt-item"><span class="item-number">#005</span><span class="item-text" contenteditable="true">Por tu fuerza y valentía en cada momento</span></div>
+              <div class="receipt-item"><span class="item-number">#006</span><span class="item-text" contenteditable="true">Por hacerme mejor persona cada día</span></div>
+              <div class="receipt-item"><span class="item-number">#007</span><span class="item-text" contenteditable="true">hola te amo besame culona</span></div>
+              <div class="receipt-item"><span class="item-number">#008</span><span class="item-text" contenteditable="true">Amo que aunque no tengamos prisa si tengamos direccion</span></div>
+              <div class="receipt-item"><span class="item-number">#009</span><span class="item-text" contenteditable="true">Amo tu sentido del humor, al compartir contigo me siento en casita</span></div>
+              <div class="receipt-item"><span class="item-number">#010</span><span class="item-text" contenteditable="true">Por ser única, hermosa y especial en todo sentido</span></div>
+              <div class="receipt-item"><span class="item-number">#011</span><span class="item-text" contenteditable="true">tengo el alma enamorada de mi aurora</span></div>
+              <div class="receipt-item"><span class="item-number">#012</span><span class="item-text" contenteditable="true">Por tu bondad y corazón generoso</span></div>
+              <div class="receipt-item"><span class="item-number">#013</span><span class="item-text" contenteditable="true">Por jamas rendirte aunque todo se venga abajo</span></div>
+              <div class="receipt-item"><span class="item-number">#014</span><span class="item-text" contenteditable="true">Todo esto sigue, tal como esa vez que te envie 101 razones de porque te amo
+                                                                                                                            mi amor por ti jamas tendra algun limite mi amorcito lindo
+              </span></div>
+            </div>
+
+            <div class="receipt-footer">
+              <div class="receipt-divider">━━━━━━━━━━━━━━━━━━━━━━</div>
+              <p class="receipt-total">TOTAL: ∞ Razones para amarte</p>
+              <p class="receipt-note">Jamas dejare de amarte, incluso si mi cuerpo no esta mi alma seguira alli para ti dandote amor 🤍</p>
+              <div class="receipt-barcode">
+                <div class="barcode-lines"></div>
+                <span class="barcode-text">AMOR-ETERNO-2026</span>
+              </div>
+              <div class="receipt-tear">✂ ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ ✂</div>
+            </div>
+          </div>
+
+          <button class="dispenser-btn" id="start-receipt" onclick="startReceiptAnimation()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            <span>Ver razones</span>
+          </button>
+        </div>
+
+        <button class="next-btn glass-btn" onclick="goToPage(4)" style="margin-top: 40px;">
+          <span>Siguiente</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- PÁGINA 4: Calendario romántico y mensaje final -->
+    <section class="page" id="page4">
+      <div class="page-content">
+        <div class="calendar-romantic">
+          <div class="calendar-container glass-card">
+            <div class="calendar-header-fancy">
+              <h2 class="calendar-title">Febrero 2026</h2>
+              <p class="calendar-subtitle">El mes del amor</p>
+            </div>
+            <div class="calendar-body">
+              <div class="weekdays">
+                <div class="weekday">LUN</div>
+                <div class="weekday">MAR</div>
+                <div class="weekday">MIÉ</div>
+                <div class="weekday">JUE</div>
+                <div class="weekday">VIE</div>
+                <div class="weekday">SÁB</div>
+                <div class="weekday">DOM</div>
+              </div>
+              <div class="calendar-days">
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+                <div class="day"><span>1</span></div>
+                <div class="day"><span>2</span></div>
+                <div class="day"><span>3</span></div>
+                <div class="day"><span>4</span></div>
+                <div class="day"><span>5</span></div>
+                <div class="day"><span>6</span></div>
+                <div class="day"><span>7</span></div>
+                <div class="day"><span>8</span></div>
+                <div class="day"><span>9</span></div>
+                <div class="day"><span>10</span></div>
+                <div class="day"><span>11</span></div>
+                <div class="day"><span>12</span></div>
+                <div class="day"><span>13</span></div>
+                <div class="day special-day" id="valentine-day">
+                  <div class="day-number">14</div>
+                  <div class="heart-icon">🤍</div>
+                  <div class="day-label">San Valentín</div>
+                  <div class="special-glow"></div>
+                </div>
+                <div class="day"><span>15</span></div>
+                <div class="day"><span>16</span></div>
+                <div class="day"><span>17</span></div>
+                <div class="day"><span>18</span></div>
+                <div class="day"><span>19</span></div>
+                <div class="day"><span>20</span></div>
+                <div class="day"><span>21</span></div>
+                <div class="day"><span>22</span></div>
+                <div class="day"><span>23</span></div>
+                <div class="day"><span>24</span></div>
+                <div class="day"><span>25</span></div>
+                <div class="day"><span>26</span></div>
+                <div class="day"><span>27</span></div>
+                <div class="day"><span>28</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="romantic-message">
+            <div class="message-card glass-card">
+              <div class="message-ribbon"><span>🤍</span></div>
+              <h3 class="message-title">Mi promesa para ti</h3>
+              <div class="message-content" contenteditable="true">
+                <p>Es seguir amandote, en todo momento y circunstancia</p>
+                <p>Eres el amor de mi vida, mi alma, mi ser completo.</p>
+                <p>Estoy profundamente orgulloso de la mujer increíble que eres hoy,</p>
+                <p>de tu fuerza, de tu dedicación y de todo el esfuerzo que pones</p>
+                <p>para seguir adelante cada día.</p>
+                <p>Te prometi tambien darte una casa, una familia, estabilidad</p>
+                <p>y aparte esa promesa la hice ante los ojos de dios, jamas incumplire esto</p>
+                <p>y de mas importante, prometi darte paz, eso hare mi amor hermoso</p>
+                <p>Gracias por ser mi compañera, mi amor, mi todo.</p>
+                <p>cuento los dias para poder verte, poder abrazarte, besarte y cumplir esas promesas</p>
+                <p>pronto haremos todo juntos mi amor, pinki promise</p>
+                <p class="message-highlight">Te amo hoy, mañana y siempre. 🤍</p>
+              </div>
+              <div class="message-signature" contenteditable="true">
+                Para siempre tuyo,<br />
+                Tu amor eterno
+              </div>
+            </div>
+
+            <div class="future-valentines glass-card">
+              <h4>amare a mi culona por mas de:</h4>
+              <div class="future-list">
+                <div class="future-item"><span class="future-heart">🤍</span> 14 de Febrero 2027</div>
+                <div class="future-item"><span class="future-heart">🤍</span> 14 de Febrero 2028</div>
+                <div class="future-item"><span class="future-heart">🤍</span> 14 de Febrero 2029</div>
+                <div class="future-item"><span class="future-heart">🤍</span> Y todos los que siguen... ∞</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="restart-btn glass-btn" onclick="goToPage(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          <span>Volver al inicio</span>
+        </button>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Navegación de puntos -->
+  <nav class="page-dots" id="page-dots">
+    <span class="dot active" onclick="goToPage(1)" aria-label="Página 1"></span>
+    <span class="dot" onclick="goToPage(2)" aria-label="Página 2"></span>
+    <span class="dot" onclick="goToPage(3)" aria-label="Página 3"></span>
+    <span class="dot" onclick="goToPage(4)" aria-label="Página 4"></span>
+  </nav>
+
+  <!-- Botón de música -->
+  <button class="music-toggle" id="music-toggle" aria-label="Activar música">
+    <svg class="music-on" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+    <svg class="music-off" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
