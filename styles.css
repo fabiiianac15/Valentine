@@ -652,12 +652,14 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.8);
-  width: 95%;
+  width: 92%;
   max-width: 650px;
   opacity: 0;
   transition: all 0.8s var(--transition-bounce);
   pointer-events: none;
   z-index: 15;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .letter-content.visible {
@@ -1110,6 +1112,8 @@ body {
   text-align: center;
   font-size: 13px;
   letter-spacing: -1px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .receipt-items {
@@ -1618,48 +1622,179 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .page { padding: 30px 16px 100px; }
-  .envelope-3d { padding: 28px; }
-  .letter-paper { padding: 28px 22px; }
-  .letter-title { font-size: 34px; }
-  .prompt-text { font-size: 28px; }
-  .hearts-grid-photos { grid-template-columns: repeat(2, 1fr); gap: 28px; }
-  .hearts-grid-photos.three-photos { grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .heart-shape-container { width: 160px; height: 160px; }
-  .calendar-container { padding: 28px 20px; }
-  .calendar-title { font-size: 28px; }
-  .message-card { padding: 28px 22px; }
-  .message-title { font-size: 30px; }
-  .message-content { font-size: 14px; }
-  .receipt-dispenser { padding: 22px; }
-  .glass-btn { padding: 14px 28px; font-size: 15px; }
-  .page-dots { bottom: 18px; padding: 10px 18px; gap: 8px; }
-  .countdown-number { font-size: 32px; }
-  .countdown-unit { min-width: 55px; }
-  .countdown-section { padding: 28px 20px; }
-  .thoughts-title { font-size: 28px; }
-  .thoughts-container { padding: 16px 22px 30px; }
-  .thought-item { padding: 16px 18px; gap: 12px; }
-  .thought-heart { font-size: 22px; }
-  .thought-text { font-size: 14px; }
-  .heart-caption { font-size: 15px; padding: 8px 14px; }
+  .page { padding: 24px 14px 90px; }
+  .envelope-wrapper { max-width: 100%; }
+  .envelope-3d { padding: 24px 18px; }
+  .envelope-flap { height: 100px; }
+  .letter-content { width: 98%; }
+  .letter-paper { padding: 24px 18px; }
+  .letter-title { font-size: 30px; }
+  .letter-body { font-size: 14px; padding: 16px; min-height: 150px; }
+  .letter-signature { font-size: 20px; padding: 12px; }
+  .prompt-text { font-size: 26px; }
+  .prompt-subtext { font-size: 15px; }
+  .hearts-grid-photos { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .hearts-grid-photos.three-photos { grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 100%; }
+  .heart-shape-container { width: 140px; height: 140px; }
+  .heart-caption { font-size: 14px; padding: 6px 12px; }
+  .calendar-container { padding: 22px 14px; }
+  .calendar-title { font-size: 24px; }
+  .calendar-subtitle { font-size: 13px; }
+  .weekdays { gap: 4px; }
+  .weekday { font-size: 11px; padding: 6px 0; }
+  .calendar-days { gap: 4px; }
+  .day { font-size: 13px; border-radius: 8px; }
+  .day.special-day { padding: 4px; }
+  .day-number { font-size: 16px; }
+  .day-label { font-size: 7px; }
+  .heart-icon { font-size: 14px; }
+  .message-card { padding: 24px 18px; }
+  .message-title { font-size: 28px; }
+  .message-content { font-size: 14px; padding: 14px; }
+  .message-content p { margin-bottom: 6px; }
+  .message-highlight { font-size: 22px; }
+  .message-signature { font-size: 18px; padding: 14px; }
+  .receipt-dispenser { padding: 18px 14px; border-radius: 22px 22px 14px 14px; }
+  .dispenser-top { padding: 16px 12px; }
+  .dispenser-label { font-size: 13px; letter-spacing: 1.5px; }
+  .receipt-header h3 { font-size: 15px; }
+  .receipt-items { padding: 14px 16px; }
+  .receipt-item { font-size: 11.5px; gap: 10px; }
+  .item-number { font-size: 10px; min-width: 34px; }
+  .receipt-divider { font-size: 11px; }
+  .receipt-total { font-size: 13px; }
+  .receipt-note { font-size: 11px; }
+  .barcode-text { font-size: 9px; }
+  .glass-btn { padding: 13px 24px; font-size: 15px; }
+  .page-dots { bottom: 14px; padding: 8px 16px; gap: 7px; }
+  .countdown-number { font-size: 30px; }
+  .countdown-unit { min-width: 50px; }
+  .countdown-section { padding: 24px 16px; }
+  .countdown-label { font-size: 20px; }
+  .thoughts-section { margin-bottom: 36px; }
+  .thoughts-header { padding: 30px 20px 8px; }
+  .thoughts-title { font-size: 26px; }
+  .thoughts-icon { font-size: 38px; }
+  .thoughts-subtitle { font-size: 16px; }
+  .thoughts-container { padding: 14px 18px 28px; gap: 12px; }
+  .thought-item { padding: 14px 16px; gap: 10px; }
+  .thought-heart { font-size: 20px; }
+  .thought-text { font-size: 13px; padding: 4px 8px; }
+  .section-subtitle { font-size: 22px; margin-bottom: 28px; }
+  .future-valentines { padding: 24px 18px; }
+  .future-valentines h4 { font-size: 18px; }
+  .future-item { padding: 12px 18px; font-size: 14px; }
+  .label-row { gap: 10px; }
+  .label-title { font-size: 13px; min-width: 45px; }
+  .label-value { font-size: 16px; padding: 10px 14px; }
+  .stamp { padding: 8px 10px; }
+  .stamp-icon { font-size: 18px; }
+  .stamp-text { font-size: 8px; }
+  .wax-seal { width: 70px; height: 70px; top: -36px; }
+  .seal-inner svg { width: 30px; height: 30px; }
+  .envelope-labels { margin-top: 28px; gap: 14px; }
+  .floating-hearts { inset: -30px; }
 }
 
 @media (max-width: 480px) {
+  .page { padding: 18px 10px 85px; }
+  .envelope-3d { padding: 20px 14px; }
+  .envelope-flap { height: 80px; }
+  .envelope-body { padding: 24px 16px; }
+  .letter-paper { padding: 20px 14px; }
+  .letter-title { font-size: 26px; }
+  .letter-body { font-size: 13px; padding: 14px 12px; line-height: 1.7; }
+  .letter-date { font-size: 11px; }
+  .prompt-text { font-size: 22px; }
+  .prompt-subtext { font-size: 13px; }
   .hearts-grid-photos { grid-template-columns: 1fr; }
-  .hearts-grid-photos.three-photos { grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .heart-shape-container { width: 140px; height: 140px; }
-  .wax-seal { width: 66px; height: 66px; }
-  .seal-inner svg { width: 28px; height: 28px; }
-  .label-value { font-size: 17px; }
-  .calendar-days .day { font-size: 13px; }
-  .day-number { font-size: 18px; }
-  .future-item { padding: 12px 20px; font-size: 14px; }
-  .letter-title { font-size: 28px; }
-  .countdown-number { font-size: 28px; }
-  .countdown-separator { font-size: 24px; }
-  .prompt-text { font-size: 24px; }
-  .music-toggle { top: 16px; right: 16px; width: 42px; height: 42px; }
+  .hearts-grid-photos.three-photos { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .heart-shape-container { width: 100px; height: 100px; }
+  .heart-caption { font-size: 12px; padding: 5px 10px; white-space: nowrap; }
+  .heart-photo-frame { gap: 10px; }
+  .wax-seal { width: 58px; height: 58px; top: -30px; }
+  .seal-inner svg { width: 24px; height: 24px; }
+  .label-value { font-size: 15px; padding: 8px 12px; }
+  .label-title { font-size: 12px; min-width: 40px; }
+  .calendar-container { padding: 18px 10px; }
+  .calendar-title { font-size: 22px; }
+  .weekdays { gap: 2px; }
+  .weekday { font-size: 10px; padding: 4px 0; letter-spacing: 0; }
+  .calendar-days { gap: 3px; }
+  .calendar-days .day { font-size: 12px; border-radius: 6px; }
+  .day-number { font-size: 15px; }
+  .day-label { font-size: 6px; letter-spacing: 0; }
+  .heart-icon { font-size: 12px; }
+  .special-day { gap: 2px !important; }
+  .message-card { padding: 20px 14px; }
+  .message-title { font-size: 24px; margin-bottom: 18px; }
+  .message-content { font-size: 13px; padding: 12px; line-height: 1.7; }
+  .message-highlight { font-size: 20px; }
+  .message-signature { font-size: 16px; padding: 12px; }
+  .message-ribbon { width: 38px; height: 38px; top: -14px; font-size: 16px; }
+  .future-item { padding: 10px 16px; font-size: 13px; }
+  .future-valentines h4 { font-size: 16px; margin-bottom: 16px; }
+  .countdown-number { font-size: 24px; }
+  .countdown-separator { font-size: 20px; }
+  .countdown-unit { min-width: 45px; }
+  .countdown-text { font-size: 10px; }
+  .receipt-dispenser { padding: 14px 10px; max-width: 100%; }
+  .dispenser-top { padding: 14px 10px; border-radius: 14px; }
+  .dispenser-label { font-size: 11px; letter-spacing: 1px; }
+  .dispenser-slot { width: 80%; height: 6px; }
+  .receipt-header { padding: 18px 14px 14px; }
+  .receipt-logo { font-size: 28px; }
+  .receipt-header h3 { font-size: 14px; }
+  .receipt-subtitle { font-size: 11px; }
+  .receipt-items { padding: 12px 14px; }
+  .receipt-item { font-size: 11px; gap: 8px; margin-bottom: 10px; }
+  .item-number { min-width: 30px; font-size: 9px; }
+  .item-text { padding: 2px 4px; }
+  .receipt-footer { padding: 14px 14px; }
+  .receipt-total { font-size: 12px; }
+  .receipt-note { font-size: 10px; }
+  .barcode-lines { width: 120px; height: 24px; }
+  .barcode-text { font-size: 8px; letter-spacing: 2px; }
+  .receipt-tear { font-size: 11px; }
+  .dispenser-btn { padding: 14px 24px; font-size: 14px; }
+  .glass-btn { padding: 12px 22px; font-size: 14px; gap: 8px; }
+  .page-dots { bottom: 10px; padding: 7px 14px; gap: 6px; }
+  .dot { width: 8px; height: 8px; }
+  .dot.active { width: 24px; }
+  .music-toggle { top: 12px; right: 12px; width: 38px; height: 38px; }
+  .thoughts-header { padding: 24px 14px 6px; }
+  .thoughts-title { font-size: 22px; }
+  .thoughts-icon { font-size: 32px; }
+  .thoughts-subtitle { font-size: 14px; }
+  .thoughts-container { padding: 10px 14px 22px; gap: 10px; }
+  .thought-item { padding: 12px 12px 12px 16px; gap: 8px; }
+  .thought-heart { font-size: 18px; }
+  .thought-text { font-size: 12px; padding: 3px 6px; line-height: 1.5; }
+  .section-subtitle { font-size: 20px; margin-bottom: 22px; }
+  .hearts-photos-section { margin-top: 36px; }
+  .envelope-labels { margin-top: 24px; gap: 12px; }
+  .stamp-corner { top: 12px; right: 12px; }
+  .stamp { padding: 6px 8px; }
+  .stamp-icon { font-size: 16px; }
+  .stamp-text { font-size: 7px; letter-spacing: 1px; }
+  .floating-hearts { inset: -20px; }
+  .open-prompt { margin-top: 20px; }
+}
+
+@media (max-width: 360px) {
+  .page { padding: 14px 8px 80px; }
+  .hearts-grid-photos.three-photos { gap: 6px; }
+  .heart-shape-container { width: 85px; height: 85px; }
+  .heart-caption { font-size: 10px; padding: 4px 8px; }
+  .letter-title { font-size: 22px; }
+  .thoughts-title { font-size: 20px; }
+  .thought-text { font-size: 11px; }
+  .calendar-days .day { font-size: 11px; }
+  .day-number { font-size: 13px; }
+  .message-title { font-size: 22px; }
+  .receipt-dispenser { padding: 12px 8px; }
+  .envelope-3d { padding: 16px 12px; }
+  .envelope-body { padding: 20px 12px; }
 }
 
 /* === Editables === */
